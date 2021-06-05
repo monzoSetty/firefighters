@@ -72,9 +72,18 @@ public class FireDispatchImpl implements FireDispatch {
       for(Firefighter firefighter : firefightersList) {
         int fighterX = firefighter.getLocation().getX();
         int fighterY = firefighter.getLocation().getY();
+        /*
+          we could also add one more optimization , among all the drivers, the closest one with minimal miles also can be choosen.
+          if(firefighter.distanceTraveled() + distanceCalculationUtil.findShortestPath(burningCity, fighterX, fighterY) < min) {
+           optimalFighter = firefighter;
+          }
+         */
+
+        // alternatively, most real world scenario's use the fighter that can respond fastest.
         if(distanceCalculationUtil.findShortestPath(burningCity, fighterX, fighterY) < min) {
           optimalFighter = firefighter;
         }
+
       }
     }
     return optimalFighter;
