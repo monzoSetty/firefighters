@@ -32,7 +32,7 @@ public class FireDispatchImpl implements FireDispatch {
   }
 
   @Override
-  public void dispatchFirefighers(CityNode... burningBuildings) {
+  public void dispatchFirefighters(CityNode... burningBuildings) {
     for(CityNode burningCity : burningBuildings) {
         Firefighter firefighter = findFireFighter(burningCity);
         System.out.println("found fighter" + firefighter.distanceTraveled());

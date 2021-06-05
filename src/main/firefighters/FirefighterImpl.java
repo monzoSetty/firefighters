@@ -56,7 +56,6 @@ public class FirefighterImpl implements Firefighter {
             && cityNode.getY() < city.getYDimension();
   }
   private boolean isValidFireSituation(City city, CityNode cityNode) {
-
     // if city node is with in limits and if city is burning - return true.
     return isValidBuildingLocation(city, cityNode) && city.getBuilding(cityNode).isBurning();
   }
